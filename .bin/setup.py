@@ -78,22 +78,26 @@ key = "CS010_COURSE"
 while True:
     if key in os.environ and os.environ[key] != "":
         course_name = os.environ[key]
-        if course_name == "CS010v" or course_name == "CS010":
+        if course_name == "CS010v" or course_name == "CS010" or course_name == "CS012":
             if course_name == "CS010":
                 course = 1
-            else:
+            if course_name == "CS010v":
                 course = 2
+            else:
+                course = 3
             break
     else:
-        course = raw_input("Which course are you in (1 for CS010, 2 for CS010v): ")
+        course = raw_input("Which course are you in (1 for CS010, 2 for CS010v, 3 for CS012): ")
         course = course.strip()
         new_value = True
-    if int(course) == 1 or int(course) == 2:
+    if int(course) == 1 or int(course) == 2 or int(course) == 3:
         # Create course name
         if int(course) == 1:
             course_name = "CS010"
-        else:
+        if int(course) == 2:
             course_name = "CS010v"
+        else: 
+            course_name = "CS012"
         break
 env_file.write("export " + str(key) + "=\"" + str(course_name) + "\"" + "\n")
 
