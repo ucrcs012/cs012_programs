@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#CS12_UPDATED
+#CS12_FINAL_UPDATE
 # @file setup.py
 # @author Adam Koehler
 # @date June 11, 2013
