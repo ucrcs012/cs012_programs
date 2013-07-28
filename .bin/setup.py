@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#cs12 updated_version
+#CS12_UPDATED
 # @file setup.py
 # @author Adam Koehler
 # @date June 11, 2013
@@ -81,9 +81,9 @@ while True:
         if course_name == "CS010v" or course_name == "CS010" or course_name == "CS012":
             if course_name == "CS010":
                 course = 1
-            if course_name == "CS010v":
+            if course_name == "CS012":
                 course = 2
-            else:
+            else: 
                 course = 3
             break
     else:
@@ -96,7 +96,7 @@ while True:
             course_name = "CS010"
         if int(course) == 2:
             course_name = "CS010v"
-        else: 
+        else:
             course_name = "CS012"
         break
 env_file.write("export " + str(key) + "=\"" + str(course_name) + "\"" + "\n")
