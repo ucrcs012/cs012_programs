@@ -1,7 +1,7 @@
-cs010_programs
+cs012_programs
 ===================
 
-A repository containing executable programs utilized in CS 010 or CS 010v at 
+A repository containing executable programs utilized in CS 012 or CS 012v at 
 University of California Riverside. Each executable program is intended for 
 use with the online IDE Cloud 9: https://c9.io.
 
