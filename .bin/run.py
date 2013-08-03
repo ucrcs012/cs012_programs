@@ -66,7 +66,7 @@ def main():
                sys.exit()
         else:
             cmd = sys.argv[1]
-            timeout = 5
+            timeout = 30
     elif len(sys.argv) == 3:
         cmd = sys.argv[1]
         timeout = int(sys.argv[2])
