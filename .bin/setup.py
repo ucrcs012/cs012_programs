@@ -105,13 +105,14 @@ while True:
 env_file.write("export " + str(key) + "=\"" + str(course_name) + "\"" + "\n")
 
 
-# Acquire the R'Sub email
+
+# Acquire the UCRSub email
 key = "UCRCS_UCRSUB_EMAIL"
 while True:
     if key in os.environ and os.environ[key] != "":
         ucrsub_login = os.environ[key]
     else:
-        ucrsub_login = raw_input("Please enter your email used for R'Sub: ")
+        ucrsub_login = raw_input("Please enter your email used for UCRSub: ")
         ucrsub_login = ucrsub_login.strip()
         new_value = True
     if ucrsub_login.find("@") != -1 and ucrsub_login.find(" ") == -1:
@@ -175,7 +176,10 @@ if  index != -1:
     print ""
 else:
     print ""
-    print "Success! Close all editing tabs/terminals except one at bottom of interface."
-    print "Type 'exit' and hit 'enter' within the terminal at bottom of interface."
-    print ""
+    print "Successfully uploaded workspace information."
+
+print ""
+print "Please, close all editing tabs/terminals except one at bottom of interface."
+print "Type 'exit' and hit 'enter' within the terminal at bottom of interface."
+print ""
     
