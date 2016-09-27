@@ -60,7 +60,8 @@ binDir = os.path.join(baseDir, ".bin")
 
 # copy over the files from .bin to user's local .bin/ucr_cs
 for f in os.listdir(binDir):
-    shutil.copy(os.path.join(binDir,f), ucr_cs)
+    if os.path.isfile(os.path.join(binDir,f)):
+        shutil.copy(os.path.join(binDir,f), ucr_cs)
     
 # paths to various files
 ucrcs_env_path = os.path.join(ucr_cs, ENV_FILE_NAME)
@@ -144,7 +145,7 @@ while True:
     if key in os.environ and os.environ[key] != "":
         ucrsub_login = os.environ[key]
     else:
-        ucrsub_login = raw_input("Please enter your email used for UCRSub: ")
+        ucrsub_login = raw_input("Please enter your email (e.g. netID@ucr.edu): ")
         ucrsub_login = ucrsub_login.strip()
         new_value = True
     if ucrsub_login.find("@") != -1 and ucrsub_login.find(" ") == -1 and len(ucrsub_login) > 0 and ucrsub_login.find("@") < len(ucrsub_login) - 1:
@@ -186,7 +187,7 @@ url += "&"+form_email+"=" + str(ucrsub_login)
 url += "&"+form_c9user+"=" + str(C9_USER) 
 url += "&"+form_space+"=" + str(workspace_url) 
 url += "&"+form_class+"=" + str(course_name)
-page = urllib2.urlopen(url)
+#page = urllib2.urlopen(url)
 
 
 print ""
